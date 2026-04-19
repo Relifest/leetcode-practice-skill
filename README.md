@@ -41,7 +41,7 @@ It is designed for Codex / OpenClaw style skill loaders that read a `SKILL.md` e
 Clone this repository anywhere on your machine:
 
 ```bash
-git clone git@github.com:<your-github-username>/leetcode-practice-skill.git
+git clone git@github.com:Relifest/leetcode-practice-skill.git
 cd leetcode-practice-skill
 ```
 
