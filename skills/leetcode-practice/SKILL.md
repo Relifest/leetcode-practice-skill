@@ -15,6 +15,7 @@ Use this skill when the user is solving LeetCode or other algorithm problems in 
 - The user says a specific problem is stuck or they cannot finish the code
 - The user says a specific problem is completed
 - The user asks whether there is a better solution or what the official solution does
+- The user asks to summarize a problem category or technique, such as `回溯总结`, `动态规划总结`, or `总结这个类型`
 - The user says the problem is not from LeetCode and provides the source and statement
 - The user says they do not know how to solve the problem and wants a full explanation
 
@@ -33,6 +34,7 @@ Use this skill when the user is solving LeetCode or other algorithm problems in 
    - an `if __name__ == '__main__':` block that includes all official examples as labeled test cases
    - real local test data for predefined structures such as `ListNode` and `TreeNode`, instead of passing raw Python lists to methods that expect node objects
    - a printed result and expected output for each official example when the example can be mapped cleanly to the function signature
+   - for design / data-structure problems whose official examples are operation sequences such as `["MinStack", "push", ...]` or `["MedianFinder", "addNum", ...]`, manually translate the example into a runnable `__main__` operation replay instead of leaving a TODO
 5. Keep the filename format as `<题号>. <中文题名>.py`.
 6. Use the stable category folders from the repo and route sorting-focused problems to `排序`.
 
@@ -52,6 +54,7 @@ Use this skill when the user is solving LeetCode or other algorithm problems in 
   - space complexity
   - concrete optimization points
   - whether the current approach is already optimal for this problem class
+- If the algorithm choice is already optimal and any further improvement would only be code-structure or readability refactoring, proactively include the summary content as well: one concise comment-style method summary plus time and space complexity. If the user later asks to apply that refactor in the file, add the summary comments together with the refactor without waiting for a separate `总结` request.
 - Do not edit the file.
 
 ### Summary command
@@ -64,6 +67,19 @@ Use this skill when the user is solving LeetCode or other algorithm problems in 
   - space complexity
 - If the user asks to write the summary into the file, add the summary comments immediately above the corresponding method and do not change the algorithm body unless the user also asks for fixes.
 - If the current solution is still incomplete or local examples obviously fail, say so first and do not mark it as a finished-summary version until fixed.
+
+### Category summary
+
+- If the user asks to summarize a technique or category such as `回溯`, `动态规划`, `图论`, or says `总结一个类型的题型`, first read the implemented files under the relevant folder in the workspace.
+- Synthesize the summary from the actual solved files in that folder instead of writing a generic textbook answer detached from the repo.
+- The summary should cover:
+  - when to recognize and use this technique
+  - the standard workflow or template
+  - common state designs
+  - major subtypes with examples from the repo
+  - common pitfalls and pruning ideas
+  - how to analyze time and space complexity
+- If the user asks to save the summary, create or update a markdown file inside that category folder and keep the writing clear, concise, and practical.
 
 ### Better solutions and official answers
 

@@ -1,4 +1,3 @@
 interface:
   display_name: "LeetCode Practice"
   short_description: "Scaffold and review LeetCode problems"
-  default_prompt: "Use $leetcode-practice to scaffold, continue, or review a LeetCode problem in a Python practice repo."
