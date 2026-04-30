@@ -1,5 +1,7 @@
 # LeetCode Practice Skill
 
+[中文说明](README.zh-CN.md)
+
 `leetcode-practice-skill` is a reusable skill package for Python LeetCode practice repos.
 
 It is designed for Codex / OpenClaw style skill loaders that read a `SKILL.md` entrypoint plus optional `agents/`, `references/`, and `scripts/` resources. The skill focuses on Chinese LeetCode workflows backed by `leetcode.cn`.
